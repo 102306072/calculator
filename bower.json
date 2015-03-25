@@ -1,0 +1,16 @@
+{
+  "name": "calculator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/102306072/calculator",
+  "authors": [
+    "mosquito <102306072@nccu.edu.tw>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
