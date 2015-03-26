@@ -10,8 +10,7 @@ $(function(){
 
 	//按下數字鍵時的操作
 	$(".num").on('click', function()
-	{
-		
+	{ 	
 		//畫面上顯示上個答案時按下了數字鍵代表清除
 		if(hasShowAns == true)
 		{
@@ -47,6 +46,11 @@ $(function(){
 	//按下運算符號鍵時的操作
 	$(".ope").on('click', function()
 	{
+		//畫面上顯示錯誤時清除重來
+		if(curText == "Error!")
+		{
+			curText = "";
+		}
 
 		//畫面上顯示上個答案時按下了運算符號鍵代表繼續計算（把答案當成下個算式的一部份）
 		if(hasShowAns == true)
@@ -97,7 +101,7 @@ $(function(){
 		opeLevel.length = 0;
 		i = 0;
 		k = 0;
-		curText = " ";
+		curText = "";
 
 		render();
 	})
@@ -121,13 +125,12 @@ $(function(){
 		//當運算發生錯誤，最後答案不是數值時提醒Error並清除
 		if(isNaN(tempNum[i]) == true)
 		{
-			alert("Error!");
 			tempNum.length = 0;
 			tempOpe.length = 0;
 			opeLevel.length = 0;
 			i = 0;
 			k = 0;
-			curText = " ";
+			curText = "Error!";
 		}
 		else
 		{
@@ -225,7 +228,7 @@ $(function(){
 	//讓畫面上顯示現在算式的函數
 	function render() 
 	{
-		$('#message').text(curText);
+		document.getElementById("message").value= curText;
 	}
 
 });
